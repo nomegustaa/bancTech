@@ -1,5 +1,12 @@
+import AppRoutes from './routes/AppRoutes';
+import { SalesProvider } from './context/SalesContext';
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <SalesProvider>
+      <AppRoutes />
+    </SalesProvider>
+  );
 };
 
 export default App;

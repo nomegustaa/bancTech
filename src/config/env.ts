@@ -1,0 +1,1 @@
+export const API_SALES = import.meta.env.VITE_API_SALES

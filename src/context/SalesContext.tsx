@@ -1,24 +1,6 @@
-import { ReactNode, createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { api } from '../config/api';
-
-interface ISalesProvider {
-  children: ReactNode;
-}
-
-interface ISales {
-  id: string;
-  nome: string;
-  preco: number;
-  status: string;
-  pagamento: string;
-  parcelas: number | null;
-  data: string;
-}
-
-interface SalesContextData {
-  dataSales: ISales[];
-  isLoading: boolean;
-}
+import { ISales, ISalesProvider, SalesContextData } from './interface';
 
 export const SalesContext = createContext<SalesContextData>({} as SalesContextData);
 

@@ -6,7 +6,6 @@ export const ContainerTable = styled.div`
   border-radius: 5px;
   border: 0.063rem solid ${(props) => props.theme.grayLight};
   overflow: auto;
-  margin: 0 auto;
   max-height: 25rem;
 
   &::-webkit-scrollbar {
@@ -45,6 +44,12 @@ export const TableBodyTd = styled.td`
   padding: 0.5rem 0.75rem;
   text-align: center;
   font-weight: 300;
+`;
+
+export const TableBodyTdError = styled.td`
+  text-align: center;
+  font-size: 1.3rem;
+  color: ${(props) => props.theme.redError};
 `;
 
 export const TableBodyTdStatus = styled.td<IStatus>`

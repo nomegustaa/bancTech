@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { api } from '../config/api';
 import { ISales, ISalesProvider, SalesContextData } from './interface';
 
@@ -7,6 +7,7 @@ export const SalesContext = createContext<SalesContextData>({} as SalesContextDa
 export const SalesProvider = ({ children }: ISalesProvider) => {
   const [dataSales, setDataSales] = useState<ISales[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isError, setIsError] = useState<boolean>(false);
 
   const getSales = async () => {
     setIsLoading(true);
@@ -14,7 +15,8 @@ export const SalesProvider = ({ children }: ISalesProvider) => {
       const responseSales = await api.get('/vendas');
       setDataSales(responseSales.data);
     } catch (e) {
-      throw Error('Erro ao acessar api');
+      setIsError(true);
+      console.log('Error', e);
     } finally {
       setIsLoading(false);
     }
@@ -23,5 +25,14 @@ export const SalesProvider = ({ children }: ISalesProvider) => {
     getSales();
   }, []);
 
-  return <SalesContext.Provider value={{ dataSales, isLoading }}>{children}</SalesContext.Provider>;
+  return (
+    <SalesContext.Provider value={{ dataSales, isLoading, isError }}>
+      {children}
+    </SalesContext.Provider>
+  );
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const useData = () => {
+  return useContext(SalesContext);
 };

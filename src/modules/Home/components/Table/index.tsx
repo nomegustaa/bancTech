@@ -1,9 +1,8 @@
-import { SalesContext } from '../../../../context/SalesContext';
 import Loading from '../../../../utils/Loading';
 import formatDate from '../../../../helpers/formatDate';
 import * as S from './styles';
-import { useContext } from 'react';
 import formatSales from '../../../../helpers/formatSales';
+import { SalesContextData } from '../../../../context/interface';
 
 const LoadingColumn = () => {
   const tdShimmer = [];
@@ -18,14 +17,12 @@ const LoadingColumn = () => {
   return tdShimmer;
 };
 
-const Table = () => {
-  const { dataSales, isLoading } = useContext(SalesContext);
-
+const Table = ({ dataSales, isLoading, isError }: SalesContextData) => {
   return (
     <S.ContainerTable>
       <S.Table>
         <thead>
-          <tr style={{ borderBottom: '1px solid #ccc' }}>
+          <tr>
             <S.TableHeaderTd>Nome</S.TableHeaderTd>
             <S.TableHeaderTd>Pagamento</S.TableHeaderTd>
             <S.TableHeaderTd>Parcelas</S.TableHeaderTd>
@@ -41,7 +38,7 @@ const Table = () => {
               return (
                 <tr key={item.id}>
                   <S.TableBodyTd>{item.nome}</S.TableBodyTd>
-                  <S.TableBodyTd>{item.pagamento.replace('cartao', 'cartão')}</S.TableBodyTd>
+                  <S.TableBodyTd>{item.pagamento.replace(/ao/gi, 'ão')}</S.TableBodyTd>
                   <S.TableBodyTd>{item.parcelas === null ? '-' : item.parcelas}</S.TableBodyTd>
                   <S.TableBodyTd>{formatDate(item.data)}</S.TableBodyTd>
                   <S.TableBodyTd>{formatSales(item.preco)}</S.TableBodyTd>
@@ -49,6 +46,11 @@ const Table = () => {
                 </tr>
               );
             })}
+          {isError && (
+            <tr>
+              <S.TableBodyTdError colSpan={6}>Erro ao acessar api</S.TableBodyTdError>
+            </tr>
+          )}
         </S.TableBody>
       </S.Table>
     </S.ContainerTable>

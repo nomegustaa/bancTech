@@ -18,10 +18,10 @@ const shimmerAnimation = keyframes`
 
 export const ShimmerEffect = styled.div`
   width: 100%;
-  height: 20px;
+  height: 1.25rem;
   background: linear-gradient(-90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: ${shimmerAnimation} 1.5s infinite;
   border-radius: 4px;
-  margin: 10px 0;
+  margin: 0.625rem 0;
 `;

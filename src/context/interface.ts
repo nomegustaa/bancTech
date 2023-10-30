@@ -17,4 +17,5 @@ export interface ISales {
 export interface SalesContextData {
   dataSales: ISales[];
   isLoading: boolean;
+  isError: boolean;
 }

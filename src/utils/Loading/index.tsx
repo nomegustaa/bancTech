@@ -1,9 +1,10 @@
+import { IlineLoading } from './interface';
 import * as S from './styles';
 
-const Loading = () => {
+const Loading = ({ lineLoading }: IlineLoading) => {
   const shimmer = [];
 
-  for (let i = 0; i <= 10; i++) {
+  for (let i = 0; i <= lineLoading; i++) {
     shimmer.push(<S.ShimmerEffect key={i} />);
   }
 

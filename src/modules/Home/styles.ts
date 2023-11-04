@@ -9,6 +9,9 @@ export const Container = styled.div`
 
 export const ContainerContent = styled.div`
   margin: 0 50px;
+  @media (max-width: 450px) {
+    margin: 0;
+  }
 `;
 
 export const ContainerSection = styled.div`

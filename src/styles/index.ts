@@ -8,13 +8,13 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif, Helvetica;
 }
 
-  input, select {
+  input {
     outline: none;
     border-radius: 3px;
     border: 0.063rem solid ${(props) => props.theme.blueLight};
   }
 
-  select, input[type="date"]{
+  input[type="date"]{
     padding: 0.313rem;
     cursor: pointer;
   }
@@ -22,6 +22,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 0.875rem;
     font-weight: 300;
     padding: 0 0.125rem;
-    color: ${(props) => props.theme.blueLight}
+    color: ${(props) => props.theme.blueLight};
+
+  }
+
+  button{
+    font-family: 'Roboto', sans-serif, Helvetica;
   }
 `;

@@ -10,7 +10,7 @@ const LoadingColumn = () => {
   for (let i = 0; i <= 5; i++) {
     tdShimmer.push(
       <S.TableBodyTd key={i}>
-        <Loading />
+        <Loading lineLoading={10} />
       </S.TableBodyTd>,
     );
   }

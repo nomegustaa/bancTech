@@ -12,6 +12,7 @@ const SalesChart = () => {
 
   return (
     <S.ContainerChart>
+      <S.TitleChart>Dados de pagamento</S.TitleChart>
       <ResponsiveContainer width='99%' height={400}>
         <LineChart data={invertedData}>
           <XAxis dataKey='data' />

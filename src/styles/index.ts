@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   input, select {
     outline: none;
     border-radius: 3px;
-    border: 0.063rem solid ${(props) => props.theme.grayLight};
+    border: 0.063rem solid ${(props) => props.theme.blueLight};
   }
 
   select, input[type="date"]{
@@ -22,5 +22,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 0.875rem;
     font-weight: 300;
     padding: 0 0.125rem;
+    color: ${(props) => props.theme.blueLight}
   }
 `;

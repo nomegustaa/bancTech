@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import { IStatus } from './interface';
 
 export const ContainerTable = styled.div`
-  width: 95%;
+  width: 65%;
   border-radius: 5px;
-  border: 0.063rem solid ${(props) => props.theme.grayLight};
+  border: 0.063rem solid ${(props) => props.theme.blueLight};
   overflow: auto;
-  max-height: 25rem;
+  max-height: 29rem;
+  margin: 0 0px 0 10px;
+  @media (max-width: 1380px) {
+    width: 100%;
+    margin: 10px 0;
+  }
 
   &::-webkit-scrollbar {
     width: 0.625rem;

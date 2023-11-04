@@ -2,7 +2,7 @@ import Loading from '../../../../utils/Loading';
 import formatDate from '../../../../helpers/formatDate';
 import * as S from './styles';
 import formatSales from '../../../../helpers/formatSales';
-import { SalesContextData } from '../../../../context/interface';
+import { useData } from '../../../../context/SalesContext';
 
 const LoadingColumn = () => {
   const tdShimmer = [];
@@ -17,7 +17,8 @@ const LoadingColumn = () => {
   return tdShimmer;
 };
 
-const Table = ({ dataSales, isLoading, isError }: SalesContextData) => {
+const Table = () => {
+  const { dataSales, isLoading, isError } = useData();
   return (
     <S.ContainerTable>
       <S.Table>

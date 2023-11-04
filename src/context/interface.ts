@@ -18,4 +18,8 @@ export interface SalesContextData {
   dataSales: ISales[];
   isLoading: boolean;
   isError: boolean;
+  dateTo: string;
+  setDateTo: React.Dispatch<React.SetStateAction<string>>;
+  dateFrom: string;
+  setDateFrom: React.Dispatch<React.SetStateAction<string>>;
 }

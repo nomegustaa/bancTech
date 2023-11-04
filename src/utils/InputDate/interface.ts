@@ -1,5 +1,7 @@
-import { IInput } from '../InputSearchText/interface';
+import { ChangeEvent } from 'react';
 
-export interface IInputDate extends Pick<IInput, 'onChange'> {
+export interface IInputDate {
   label: string;
+  value?: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }

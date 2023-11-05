@@ -3,8 +3,6 @@ import formatDate from '../../../../helpers/formatDate';
 import * as S from './styles';
 import formatSales from '../../../../helpers/formatSales';
 import { useData } from '../../../../context/SalesContext';
-import { ArrowCircleRight } from '@phosphor-icons/react';
-import { NavLink } from 'react-router-dom';
 
 const LoadingColumn = () => {
   const tdShimmer = [];
@@ -46,16 +44,6 @@ const Table = () => {
                   <S.TableBodyTd>{formatDate(item.data)}</S.TableBodyTd>
                   <S.TableBodyTd>{formatSales(item.preco)}</S.TableBodyTd>
                   <S.TableBodyTdStatus status={item.status}>{item.status}</S.TableBodyTdStatus>
-                  <S.TableBodyTd>
-                    <NavLink to={`/vendas/${item.id}`}>
-                      <ArrowCircleRight
-                        style={{ cursor: 'pointer' }}
-                        size={30}
-                        color='#4287f5'
-                        weight='duotone'
-                      />
-                    </NavLink>
-                  </S.TableBodyTd>
                 </tr>
               );
             })}

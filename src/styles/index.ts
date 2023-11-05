@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   input {
     outline: none;
     border-radius: 3px;
-    border: 0.063rem solid ${(props) => props.theme.blueLight};
+    border: 1px solid ${(props) => props.theme.blueLight};
   }
 
   input[type="date"]{

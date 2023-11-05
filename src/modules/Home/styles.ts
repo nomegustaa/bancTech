@@ -1,33 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  margin: 20px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-`;
-
-export const ContainerContent = styled.div`
-  margin: 0 50px;
-  @media (max-width: 450px) {
-    margin: 0;
-  }
-`;
-
 export const ContainerSection = styled.div`
-  margin: 10px 0;
+  margin: 0.625rem 0;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 1380px) {
+  @media (max-width: 86.25rem) {
     flex-direction: column;
   }
-`;
-
-export const Title = styled.h1`
-  font-weight: 500;
-  padding: 0 15px;
-  border-left: 3px solid ${(props) => props.theme.blueLight};
-  color: ${(props) => props.theme.grayDark};
 `;
 
 export const ContainerInputs = styled.div`

@@ -7,10 +7,10 @@ export const ContainerTable = styled.div`
   border: 0.063rem solid ${(props) => props.theme.blueLight};
   overflow: auto;
   max-height: 29rem;
-  margin: 0 0px 0 10px;
-  @media (max-width: 1380px) {
+  margin: 0 0 0 0.625rem;
+  @media (max-width: 86.25rem) {
     width: 100%;
-    margin: 10px 0;
+    margin: 0.625rem 0;
   }
 
   &::-webkit-scrollbar {
@@ -43,12 +43,15 @@ export const TableHeaderTd = styled.td`
   font-weight: 700;
   padding: 0.5rem 0.75rem;
   text-align: center;
+  color: ${(props) => props.theme.grayDark};
 `;
 
 export const TableBodyTd = styled.td`
   padding: 0.5rem 0.75rem;
   text-align: center;
   font-weight: 300;
+  border-top: 1px solid ${(props) => props.theme.blueLight};
+  color: ${(props) => props.theme.grayDark};
 `;
 
 export const TableBodyTdError = styled.td`
@@ -59,6 +62,7 @@ export const TableBodyTdError = styled.td`
 
 export const TableBodyTdStatus = styled.td<IStatus>`
   padding: 0.5rem 0.75rem;
+  border-top: 1px solid ${(props) => props.theme.blueLight};
   text-align: center;
   color: ${(props) =>
     props.status === 'pago'

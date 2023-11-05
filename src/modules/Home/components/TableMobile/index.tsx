@@ -5,6 +5,7 @@ import formatSales from '../../../../helpers/formatSales';
 import Loading from '../../../../utils/Loading';
 import * as S from './style';
 import ButtonShowView from '../../../../utils/ButonShowView';
+import BoxData from '../../../../utils/BoxData';
 
 const TableMobile = () => {
   const { dataSales, isLoading, isError } = useData();
@@ -21,14 +22,14 @@ const TableMobile = () => {
     <div>
       {isError && <p>Erro ao acesso api</p>}
       {isLoading && (
-        <S.BoxData>
+        <BoxData>
           <Loading lineLoading={5} />
-        </S.BoxData>
+        </BoxData>
       )}
       {dataSales &&
         dataSales.map((data) => {
           return (
-            <S.BoxData key={data.id}>
+            <BoxData key={data.id}>
               <p>Nome: {data.nome}</p>
               <p>Pagamento: {data.pagamento.replace(/ao/gi, 'ão')}</p>
               {showView[data.id] && (
@@ -47,7 +48,7 @@ const TableMobile = () => {
                 isExpand={showView}
                 itemId={data.id}
               />
-            </S.BoxData>
+            </BoxData>
           );
         })}
     </div>
